@@ -1,13 +1,13 @@
-package com.cs.employeeapp;
+package com.cs.customerapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class EmployeeAppApplication {
+public class BackendApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EmployeeAppApplication.class, args);
+		SpringApplication.run(BackendApplication.class, args);
 	}
 
 }

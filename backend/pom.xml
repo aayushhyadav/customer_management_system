@@ -8,11 +8,11 @@
 		<version>2.7.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.cs.employeeapp</groupId>
-	<artifactId>employee-app</artifactId>
+	<groupId>com.cs.customerapp</groupId>
+	<artifactId>backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>employee-app</name>
-	<description>Demo project for Spring Boot</description>
+	<name>backend</name>
+	<description>Customer App</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
