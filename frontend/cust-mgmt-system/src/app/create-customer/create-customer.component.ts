@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Customer } from '../Customer';
+import { CustomerDataService } from '../customer-data.service';
 
 @Component({
   selector: 'app-create-customer',
@@ -8,12 +10,16 @@ import { Router } from '@angular/router';
 })
 export class CreateCustomerComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private customerData: CustomerDataService) { }
 
   ngOnInit(): void {
   }
 
-  onCreate(): void {
-    this.router.navigate(['/view-customers']);
+  onCreate(customer: Customer): void {
+    customer.customerId = this.customerData.curCustomerId;
+    this.customerData.updateCurCustomer();
+    this.customerData.addCustomer(customer).subscribe(
+      data => this.router.navigate(['view-customer'])
+    )
   }
 }

@@ -1,32 +1,72 @@
-<div class='box'>
-  <div class='box-form'>
+<form #customerForm="ngForm" (ngSubmit)="onCreate(customerForm.value)">
+  <div class='box'>
+    <div class='box-form'>
 
-    <div class='box-login-tab'></div>
+      <div class='box-login-tab'></div>
 
-    <div class='box-login-title'>
-      <div class='i i-login'></div>
-      <h2>CS</h2>
-    </div>
+      <div class='box-login-title'>
+        <div class='i i-login'></div>
+        <h2>CS</h2>
+      </div>
 
-    <div class='box-login'>
-      <div class='fieldset-body' id='login_form'>
-        <p class='field'>
-          <label for='username'>NAME</label>
-          <input type='text' id='username' name='username' />
-        </p>
-        <p class='field'>
-          <label for='email'>E-MAIL</label>
-          <input type='text' id='email' name='email' />
-        </p>
-      	<p class='field'>
-          <label for='password'>PASSWORD</label>
-          <input type='password' id='password' name='password' />
-        </p>
-        <p class='field'>
-          <label for='acc_type'>ACCOUNT TYPE</label>
-          <input type='text' id='acc_type' name='acc_type' />
-        </p>
-        <input type='submit' id='do_login' value='CREATE ACCOUNT' />
+      <div class='box-login'>
+        <div class='fieldset-body' id='login_form'>
+          <p class='field'>
+            <label for='customerName'>NAME</label>
+            <input
+              ngModel
+              #customerName="ngModel"
+              type='text' 
+              id='customerName' 
+              name='customerName' 
+              required
+              pattern="[a-zA-Z\s]+"/>
+          </p>
+          <p class='field'>
+            <label for='email'>E-MAIL</label>
+            <input
+              ngModel
+              #email="ngModel"
+              type='email' 
+              id='email' 
+              name='email'
+              required 
+            />
+          </p>
+          <p class='field'>
+            <label for='password'>PASSWORD</label>
+            <input
+              ngModel
+              #password="ngModel"
+              type='password' 
+              id='password' 
+              name='password'
+              minlength="6" 
+              required
+            />
+          </p>
+          <p class='field'>
+            <label for='accType'>ACCOUNT TYPE</label>
+            <input
+              ngModel
+              #accType="ngModel"
+              type='text' 
+              id='accType' 
+              name='accType'
+              required
+              pattern="[A-Z]+"
+            />
+          </p>
+          <button
+            class="btn btn-primary"
+            id='do_login'
+            [disabled]="customerForm.invalid"
+          >
+          CREATE ACCOUNT
+        </button>
+        </div>
       </div>
     </div>
   </div>
+</form>
+
