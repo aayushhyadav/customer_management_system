@@ -19,7 +19,13 @@ export class CreateCustomerComponent implements OnInit {
     customer.customerId = this.customerData.curCustomerId;
     this.customerData.updateCurCustomer();
     this.customerData.addCustomer(customer).subscribe(
-      data => this.router.navigate(['view-customer'])
-    )
+      data => {
+        console.log(data);
+        this.router.navigate(['view-customer'])
+      },
+      error => {
+        alert("Email already exists!");
+      }
+    ) 
   }
 }

@@ -23,6 +23,7 @@
                             pattern="[a-zA-Z\s]+"
                             value={{this.currentCustomer.customerName}}
                         />
+                        <small class="text-danger" *ngIf="customerName.invalid && customerName.touched">Input a valid Customer Name</small>
                     </p>
                     <p class='field'>
                         <label for='email'>E-MAIL</label>
@@ -35,6 +36,7 @@
                             value={{this.currentCustomer.email}}
                             required 
                         />
+                        <small class="text-danger" *ngIf="email.invalid && email.touched">Input a valid email</small>
                     </p>
                     <p class='field'>
                         <label for='accType'>ACCOUNT TYPE</label>
@@ -48,11 +50,12 @@
                             pattern="[A-Z]+" 
                             value={{this.currentCustomer.accType}}
                         />
+                        <small class="text-danger" *ngIf="accType.invalid && accType.touched">Input a valid account type</small>
                     </p>
                     <button 
                         class="btn btn-primary" 
-                        id='do_login' 
-                    >
+                        id='do_login'
+                    >   
                         UPDATE
                     </button>
                 </div>

@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+import javax.persistence.UniqueConstraint;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor @NoArgsConstructor
 @Entity
-@Table(name = "customer_details")
+@Table(name = "customer_data")
 public class Customer {
 	
 		@Id
@@ -28,7 +28,7 @@ public class Customer {
 	    @Column(name = "password")
 	    private String password;
 	    
-	    @Column(name = "email")
+	    @Column(name = "email", unique = true)
 	    private String email;
 	    
 	    @Column(name = "account_type")

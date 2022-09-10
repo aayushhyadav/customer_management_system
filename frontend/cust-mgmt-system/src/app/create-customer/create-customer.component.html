@@ -20,18 +20,21 @@
               id='customerName' 
               name='customerName' 
               required
-              pattern="[a-zA-Z\s]+"/>
+              pattern="[a-zA-Z\s]+"
+            />
+            <small class="text-danger" *ngIf="customerName.invalid && customerName.touched">Input a valid Customer Name</small>
           </p>
           <p class='field'>
             <label for='email'>E-MAIL</label>
             <input
               ngModel
               #email="ngModel"
-              type='email' 
+              type="email" 
               id='email' 
               name='email'
               required 
             />
+            <small class="text-danger" *ngIf="email.invalid && email.touched">Input a valid email</small>
           </p>
           <p class='field'>
             <label for='password'>PASSWORD</label>
@@ -44,6 +47,7 @@
               minlength="6" 
               required
             />
+            <small class="text-danger" *ngIf="password.invalid && password.touched">Input a password with atleast 6 characters</small>
           </p>
           <p class='field'>
             <label for='accType'>ACCOUNT TYPE</label>
